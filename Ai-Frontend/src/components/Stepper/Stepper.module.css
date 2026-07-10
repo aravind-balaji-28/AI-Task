@@ -1,0 +1,78 @@
+.item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.left {
+  position: relative;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 0;
+  background: #9aa0a6;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 2;
+  position: relative;
+}
+
+.active .circle {
+  background: #1a73e8;
+}
+
+.completed .circle {
+  background: #1a73e8;
+}
+
+.line {
+  position: absolute;
+  top: 24px;
+  left: 11px;
+  width: 2px;
+  bottom: -32px;
+  background: #dadce0;
+}
+
+.completed .line {
+  background: #1a73e8;
+}
+
+.right {
+  flex: 1;
+  margin-left: 16px;
+  padding-bottom: 36px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #202124;
+}
+
+.description {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 28px;
+  color: #202124;
+  max-width: 470px;
+}
+
+.content {
+  margin-top: 16px;
+}
+
+.lastStep .line {
+  display: none;
+}/*# sourceMappingURL=Stepper.module.css.map */

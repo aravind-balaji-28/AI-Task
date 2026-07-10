@@ -1,0 +1,153 @@
+.item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 11px;
+  bottom: 0;
+  width: 2px;
+  background: #dadce0;
+}
+.item.completed::after {
+  background: #1a73e8;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  width: 24px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: #9aa0a6;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.completedCircle {
+  background: #1a73e8;
+}
+.completedCircle::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  margin-bottom: 3px;
+}
+
+.right {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 2rem;
+}
+
+.title {
+  margin: 0;
+  color: #202124;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.description {
+  margin-top: 0.25rem;
+  color: #5f6368;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms ease;
+}
+
+.contentInner {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.contentOpen {
+  grid-template-rows: 1fr;
+}
+.contentOpen .contentInner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tick {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* -----------------------------
+   States
+------------------------------ */
+.active .circle {
+  background: #1a73e8;
+}
+
+.completed .circle {
+  background: #1a73e8;
+}
+
+.upcoming .circle {
+  background: #9aa0a6;
+  color: #fff;
+}
+
+.clickable .circle {
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 768px) {
+  .item {
+    gap: 0.75rem;
+  }
+  .circle {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.75rem;
+  }
+  .title {
+    font-size: 0.9375rem;
+  }
+  .description {
+    font-size: 0.8125rem;
+  }
+  .right {
+    padding-bottom: 1.5rem;
+  }
+}/*# sourceMappingURL=StepperItem.module.css.map */

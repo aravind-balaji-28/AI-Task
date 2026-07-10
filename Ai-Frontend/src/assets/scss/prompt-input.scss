@@ -1,0 +1,102 @@
+@mixin circle-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    svg {
+        font-size: 1.375rem;
+    }
+
+    &:hover {
+        background: #f3f4f6;
+    }
+}
+
+.prompt-comp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .prompt-header {
+        .prompt-header-title {
+            font-size: 1.7rem;
+        }
+    }
+
+    .prompt-input {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 61.25rem;
+        min-height: 3.5rem;
+        padding: 0.5rem;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 28px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+        textarea {
+            flex: 1;
+            min-height: 24px;
+            max-height: 200px;
+            padding: 8px 90px 8px 0;
+            border: none;
+            outline: none;
+            background: transparent;
+            resize: none;
+            overflow-y: hidden;
+            font: inherit;
+            line-height: 1.5;
+
+            &::placeholder {
+                color: #8b8b8b;
+            }
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #cfcfcf;
+                border-radius: 10px;
+            }
+        }
+
+        .icon-btn {
+            @include circle-btn;
+        }
+
+        .actions {
+            position: absolute;
+            right: 1.125rem;
+            bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .send-btn {
+            @include circle-btn;
+        }
+
+        .send-btn {
+            background: #000;
+            color: #fff;
+
+            &:hover {
+                background: #222;
+            }
+        }
+    }
+}
