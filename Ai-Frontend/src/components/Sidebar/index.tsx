@@ -55,13 +55,8 @@ const Sidebar = () => {
             title: "UK Timings Explanation",
             pinned: false,
         },
-        {
-            id: 8,
-            title: "Joining Date Delay Inquiry",
-            pinned: false,
-        },
     ]);
-    const filtered = useMemo(
+    const filtered = useMemo(   
         () =>
             chats.filter((c) =>
                 c.title.toLowerCase().includes(search.toLowerCase())

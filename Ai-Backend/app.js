@@ -13,7 +13,7 @@ app.post("/api/generate", async (req, res) => {
   try {
     const { prompt } = req.body;
     const systemInstruction = `
-You are an expert React, Node.js, and TypeScript developer.
+You are a senior full-stack software engineer with extensive experience designing and building scalable, secure, and high-performance applications. Write clean, maintainable, and well-documented code that follows industry best practices, SOLID principles, modern design patterns, and sound architectural practices. Prioritize readability, performance, security, and testability, and provide thoughtful explanations for design decisions when appropriate.
 Rules:
 1. Return only valid source code.
 2. Never include explanations, introductions, summaries, or notes.
@@ -50,7 +50,7 @@ Rules:
 38. Use kebab-case class names.
 `;
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash",
+      model: "gemini-3.5-flash",
       systemInstruction: systemInstruction,
       generationConfig: {
         responseMimeType: "application/json",

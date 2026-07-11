@@ -23,17 +23,11 @@ body {
 }
 
 .main-content {
-  flex: 1;
+   flex: 1;
+  height: 100vh;
+  overflow-y: auto;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding: 2rem;
-  overflow: hidden;
-}
-
-.prompt-wrapper {
-  width: 100%;
-  max-width: 900px;
 }
 
 .primaryButton {
