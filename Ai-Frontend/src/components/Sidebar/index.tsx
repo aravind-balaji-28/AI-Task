@@ -10,94 +10,94 @@ import "../../assets/scss/sidebar.scss"
 import { LuPanelLeftClose } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 
-interface Chat {
-    id: number;
-    title: string;
-    pinned: boolean;
-}
+// interface Chat {
+//     id: number;
+//     title: string;
+//     pinned: boolean;
+// }
 
 const Sidebar = () => {
     const navigate = useNavigate();
     const [search, setSearch] = useState("");
     const [activeChat, setActiveChat] = useState(1);
     const [isCollapsed, setIsCollapsed] = useState(false);
-    const [chats, setChats] = useState<Chat[]>([
-        {
-            id: 1,
-            title: "React Component Development",
-            pinned: true,
-        },
-        {
-            id: 2,
-            title: "Node.js API Integration",
-            pinned: false,
-        },
-        {
-            id: 3,
-            title: "Authentication Flow",
-            pinned: false,
-        },
-        {
-            id: 4,
-            title: "Dashboard UI Design",
-            pinned: false,
-        },
-        {
-            id: 5,
-            title: "REST API Development",
-            pinned: false,
-        },
-        {
-            id: 6,
-            title: "Database Schema Design",
-            pinned: false,
-        },
-        {
-            id: 7,
-            title: "State Management",
-            pinned: false,
-        },
-        {
-            id: 8,
-            title: "Form Validation",
-            pinned: false,
-        },
-        {
-            id: 9,
-            title: "JWT Authentication",
-            pinned: false,
-        },
-        {
-            id: 10,
-            title: "File Upload Feature",
-            pinned: false,
-        },
-        {
-            id: 11,
-            title: "Responsive Layout",
-            pinned: false,
-        },
-        {
-            id: 12,
-            title: "Error Handling",
-            pinned: false,
-        },
-        {
-            id: 13,
-            title: "Performance Optimization",
-            pinned: false,
-        },
-        {
-            id: 14,
-            title: "Code Refactoring",
-            pinned: false,
-        },
-        {
-            id: 15,
-            title: "Deployment Configuration",
-            pinned: false,
-        },
-    ]);
+    // const [chats, setChats] = useState<Chat[]>([
+    const chats = [{
+        id: 1,
+        title: "React Component Development",
+        pinned: true,
+    },
+    {
+        id: 2,
+        title: "Node.js API Integration",
+        pinned: false,
+    },
+    {
+        id: 3,
+        title: "Authentication Flow",
+        pinned: false,
+    },
+    {
+        id: 4,
+        title: "Dashboard UI Design",
+        pinned: false,
+    },
+    {
+        id: 5,
+        title: "REST API Development",
+        pinned: false,
+    },
+    {
+        id: 6,
+        title: "Database Schema Design",
+        pinned: false,
+    },
+    {
+        id: 7,
+        title: "State Management",
+        pinned: false,
+    },
+    {
+        id: 8,
+        title: "Form Validation",
+        pinned: false,
+    },
+    {
+        id: 9,
+        title: "JWT Authentication",
+        pinned: false,
+    },
+    {
+        id: 10,
+        title: "File Upload Feature",
+        pinned: false,
+    },
+    {
+        id: 11,
+        title: "Responsive Layout",
+        pinned: false,
+    },
+    {
+        id: 12,
+        title: "Error Handling",
+        pinned: false,
+    },
+    {
+        id: 13,
+        title: "Performance Optimization",
+        pinned: false,
+    },
+    {
+        id: 14,
+        title: "Code Refactoring",
+        pinned: false,
+    },
+    {
+        id: 15,
+        title: "Deployment Configuration",
+        pinned: false,
+    },
+    ];
     const filtered = useMemo(
         () =>
             chats.filter((c) =>
